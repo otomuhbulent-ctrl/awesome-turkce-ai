@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome Türkçe Yapay Zekâ</title>
+  <meta name="description" content="Türkçe yapay zekâ ve doğal dil işleme için derlenmiş açık kaynak modeller, veri setleri, araçlar ve platformlar.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇹🇷</text></svg>">
+  <link rel="stylesheet" href="site/style.css">
+</head>
+<body>
+  <a class="atla" href="#liste">Listeye atla</a>
+  <header class="ust">
+    <div class="kap">
+      <h1>Awesome Türkçe Yapay Zekâ</h1>
+      <p class="alt">Türkçe yapay zekâ ve doğal dil işleme için derlenmiş açık kaynak modeller, veri setleri, araçlar ve platformlar.</p>
+      <nav class="baglantilar" aria-label="Proje bağlantıları">
+        <a href="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai">GitHub'da gör</a>
+        <a href="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai/issues/new?title=Kaynak%20%C3%B6nerisi%3A%20&body=Kaynak%20ad%C4%B1%3A%0ALink%3A%0AK%C4%B1sa%20a%C3%A7%C4%B1klama%3A">Kaynak öner</a>
+        <a href="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai/actions/workflows/link-check.yml">
+          <img src="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai/actions/workflows/link-check.yml/badge.svg" alt="Haftalık link kontrolü durumu" height="20">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="kap">
+    <section aria-labelledby="one-cikan-baslik" class="one-cikan">
+      <h2 id="one-cikan-baslik" class="gizli">Öne çıkanlar</h2>
+      <a class="kart vurgu" href="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai/blob/main/rehberler/evren-baslangic-rehberi.md">
+        <span class="etiket">Rehber</span>
+        <strong>EVREN'e Başlangıç</strong>
+        <span>e-Devlet ile girişten Python ile ilk API isteğine kadar 10 dakikada EVREN.</span>
+      </a>
+      <a class="kart vurgu" href="https://github.com/otomuhbulent-ctrl/evren-cookbook">
+        <span class="etiket">Örnek kod</span>
+        <strong>EVREN Cookbook</strong>
+        <span>Taranmış Türkçe PDF'e sayfa numarasıyla kaynak göstererek soru-cevap.</span>
+      </a>
+    </section>
+
+    <section aria-label="Arama ve filtre" class="arac">
+      <label for="ara" class="gizli">Kaynaklarda ara</label>
+      <input id="ara" type="search" placeholder="Ara: model, veri seti, BERT, konuşma…" autocomplete="off">
+      <div id="filtreler" class="filtreler" role="group" aria-label="Bölüme göre filtrele"></div>
+      <p id="durum" class="durum" role="status" aria-live="polite">Yükleniyor…</p>
+    </section>
+
+    <section id="liste" aria-label="Kaynaklar" tabindex="-1"></section>
+  </main>
+
+  <footer class="kap alt-bilgi">
+    <p>Liste her hafta otomatik olarak link kontrolünden geçer. Bu sayfa ziyaretçi takibi ya da çerez kullanmaz.</p>
+    <p>İçerik <a href="https://github.com/otomuhbulent-ctrl/awesome-turkce-ai/blob/main/README.md">README.md</a> dosyasından okunur · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></p>
+  </footer>
+
+  <script type="module" src="site/app.js"></script>
+</body>
+</html>
