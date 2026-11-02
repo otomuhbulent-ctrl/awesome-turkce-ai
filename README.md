@@ -24,6 +24,7 @@ Türkçe kaynaklar dağınık ve bulması zor. Bu liste, Türkçe ile çalışan
 - [Büyük Dil Modelleri (LLM)](#büyük-dil-modelleri-llm)
 - [Encoder Modelleri (BERT ve benzerleri)](#encoder-modelleri-bert-ve-benzerleri)
 - [Konuşma ve Ses](#konuşma-ve-ses)
+- [Belge ve OCR](#belge-ve-ocr)
 - [NLP Kütüphaneleri ve Araçlar](#nlp-kütüphaneleri-ve-araçlar)
 - [Veri Setleri](#veri-setleri)
 - [Değerlendirme ve Benchmark](#değerlendirme-ve-benchmark)
@@ -52,10 +53,19 @@ Bu repoda hazırlanan adım adım Türkçe rehberler:
 
 - [BERTurk](https://huggingface.co/dbmdz/bert-base-turkish-cased) - Türkçe için en yaygın kullanılan BERT modeli; sınıflandırma, NER ve benzeri görevler için başlangıç noktası.
 - [Turkish BERT ailesi](https://github.com/stefan-it/turkish-bert) - BERTurk, ConvBERTurk ve ELECTRA Türkçe modellerinin tamamı, eğitim detayları ve sonuçları.
+- [turkish-e5-large](https://huggingface.co/ytu-ce-cosmos/turkish-e5-large) - YTÜ COSMOS'un Türkçe metin gömme (embedding) modeli; anlamsal arama ve RAG için. MIT lisanslı.
 
 ## Konuşma ve Ses
 
 - [Whisper](https://github.com/openai/whisper) - Türkçe dahil çok dilli açık kaynak konuşma tanıma modeli.
+- [MMS-TTS Türkçe](https://huggingface.co/facebook/mms-tts-tur) - Meta'nın Massively Multilingual Speech projesinden Türkçe metinden sese modeli. Lisansı CC-BY-NC-4.0, ticari kullanıma kapalı.
+- [Common Voice](https://datacollective.mozillafoundation.org) - Gönüllülerin okuduğu, Türkçe dahil açık konuşma veri seti. Ekim 2025'ten beri yalnızca Mozilla Data Collective üzerinden dağıtılıyor.
+- [FLEURS](https://huggingface.co/datasets/google/fleurs) - Google'ın çok dilli konuşma değerlendirme seti; Türkçe alt kümesi `tr_tr`. CC-BY-4.0.
+
+## Belge ve OCR
+
+- [Tesseract Türkçe modeli](https://github.com/tesseract-ocr/tessdata) - Açık kaynak OCR motoru Tesseract için Türkçe dil verisi (`tur.traineddata`).
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR) - Türkçe (`tr`) dahil çok dilli, kullanımı kolay Python OCR kütüphanesi.
 
 ## NLP Kütüphaneleri ve Araçlar
 
@@ -72,6 +82,7 @@ Bu repoda hazırlanan adım adım Türkçe rehberler:
 
 ## Değerlendirme ve Benchmark
 
+- [MTEB](https://github.com/embeddings-benchmark/mteb) - Metin gömme modelleri için kapsamlı benchmark; Türkçe duygu analizi, hukuk ve RAG görevleri de içerir.
 - [Mukayese](https://github.com/alisafaya/mukayese) - Türkçe NLP görevleri için kapsamlı benchmark ve karşılaştırma çalışması.
 - [TurkishMMLU](https://github.com/ArdaYueksel/TurkishMMLU) - Türkçe dil modellerinin bilgi ve muhakeme yeteneğini ölçen çoktan seçmeli soru seti. Veri setine erişim için depodaki yönergeye göre araştırmacılarla iletişime geçmek gerekir.
 
