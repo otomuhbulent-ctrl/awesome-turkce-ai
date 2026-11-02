@@ -38,19 +38,18 @@ function el(etiket, ozellikler = {}, ...cocuklar) {
 }
 
 function filtreleriCiz(bolumler) {
-  const hepsi = [null, ...bolumler];
-  $filtreler.replaceChildren(
-    ...hepsi.map((b) => {
-      const btn = el("button", { type: "button", textContent: b ?? "Tümü", className: "cip" });
-      btn.setAttribute("aria-pressed", String(b === seciliBolum));
-      btn.addEventListener("click", () => {
-        seciliBolum = b;
-        filtreleriCiz(bolumler);
-        ciz();
-      });
-      return btn;
-    }),
-  );
+  // Butonlar bir kez çizilir; seçimde yalnız aria-pressed güncellenir ki klavye odağı kaybolmasın
+  const butonlar = [null, ...bolumler].map((b) => {
+    const btn = el("button", { type: "button", textContent: b ?? "Tümü", className: "cip" });
+    btn.setAttribute("aria-pressed", String(b === seciliBolum));
+    btn.addEventListener("click", () => {
+      seciliBolum = b;
+      butonlar.forEach((x, i) => x.setAttribute("aria-pressed", String(i === 0 ? b === null : x.textContent === b)));
+      ciz();
+    });
+    return btn;
+  });
+  $filtreler.replaceChildren(...butonlar);
 }
 
 function ciz() {
