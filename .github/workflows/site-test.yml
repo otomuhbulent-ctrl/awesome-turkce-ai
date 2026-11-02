@@ -18,4 +18,4 @@ jobs:
         with:
           node-version: 22
       # README biçimi değişip site bozulursa PR'da yakalanır
-      - run: node --test site/
+      - run: node --test "site/*.test.mjs"
