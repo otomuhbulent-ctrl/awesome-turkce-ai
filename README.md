@@ -17,6 +17,7 @@ Türkçe kaynaklar dağınık ve bulması zor. Bu liste, Türkçe ile çalışan
 
 ## İçindekiler
 
+- [Rehberler](#rehberler)
 - [Yerli Platformlar](#yerli-platformlar)
 - [Büyük Dil Modelleri (LLM)](#büyük-dil-modelleri-llm)
 - [Encoder Modelleri (BERT ve benzerleri)](#encoder-modelleri-bert-ve-benzerleri)
@@ -26,9 +27,15 @@ Türkçe kaynaklar dağınık ve bulması zor. Bu liste, Türkçe ile çalışan
 - [Değerlendirme ve Benchmark](#değerlendirme-ve-benchmark)
 - [Katkıda Bulun](#katkıda-bulun)
 
+## Rehberler
+
+Bu repoda hazırlanan adım adım Türkçe rehberler:
+
+- [EVREN'e Başlangıç Rehberi](rehberler/evren-baslangic-rehberi.md) - e-Devlet ile girişten Python ile ilk API isteğine kadar 10 dakikada EVREN.
+
 ## Yerli Platformlar
 
-- [EVREN](https://evren.ssyz.org.tr) - Türkiye'nin yerli ve bağımsız yapay zekâ ekosistemi için platform. Model ve veri seti paylaşımı, LLM sohbet ve test alanı, API erişimi ve GPU rezervasyonu sunar.
+- [EVREN](https://evren.ssyz.org.tr) - Savunma Sanayii Başkanlığı bünyesinde geliştirilen yerli yapay zekâ platformu. Veri etiketleme, H200 GPU kümesinde model eğitimi ve açık ağırlıklı LLM'lere OpenAI uyumlu API ile erişim sunar; veri yurt içinde kalır. ([Başlangıç rehberi](rehberler/evren-baslangic-rehberi.md))
 
 ## Büyük Dil Modelleri (LLM)
 
