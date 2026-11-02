@@ -32,6 +32,7 @@ Türkçe kaynaklar dağınık ve bulması zor. Bu liste, Türkçe ile çalışan
 Bu repoda hazırlanan adım adım Türkçe rehberler:
 
 - [EVREN'e Başlangıç Rehberi](rehberler/evren-baslangic-rehberi.md) - e-Devlet ile girişten Python ile ilk API isteğine kadar 10 dakikada EVREN.
+- [EVREN Cookbook](https://github.com/otomuhbulent-ctrl/evren-cookbook) - EVREN için çalışan, test edilmiş örnekler; ilki taranmış Türkçe PDF'e kaynak göstererek soru-cevap.
 
 ## Yerli Platformlar
 
