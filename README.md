@@ -9,6 +9,8 @@
 [![Katkılar Açık](https://img.shields.io/badge/katk%C4%B1lar-a%C3%A7%C4%B1k-brightgreen.svg)](CONTRIBUTING.md)
 [![Lisans: CC0](https://img.shields.io/badge/lisans-CC0-lightgrey.svg)](LICENSE)
 
+**[🔎 Aranabilir sürüm: otomuhbulent-ctrl.github.io/awesome-turkce-ai](https://otomuhbulent-ctrl.github.io/awesome-turkce-ai/)**
+
 </div>
 
 Türkçe kaynaklar dağınık ve bulması zor. Bu liste, Türkçe ile çalışan yapay zekâ modellerini, veri setlerini ve araçlarını tek bir yerde topluyor. Yeni başlayan öğrenciden araştırmacıya kadar herkes için.
