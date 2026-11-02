@@ -26,8 +26,14 @@ async function readmeGetir() {
   throw new Error("README okunamadı");
 }
 
+// Göreli yollar repo içindeki dosyaya çözülür; http(s) dışındaki şemalar reddedilir
 function tamUrl(url) {
-  return /^https?:\/\//.test(url) ? url : `${REPO}/blob/main/${url}`;
+  try {
+    const u = new URL(url, `${REPO}/blob/main/`);
+    return u.protocol === "https:" || u.protocol === "http:" ? u.href : null;
+  } catch {
+    return null;
+  }
 }
 
 function el(etiket, ozellikler = {}, ...cocuklar) {
@@ -53,7 +59,7 @@ function filtreleriCiz(bolumler) {
 }
 
 function ciz() {
-  const sonuc = filtrele(tumu, $ara.value, seciliBolum);
+  const sonuc = filtrele(tumu, $ara.value, seciliBolum).filter((k) => tamUrl(k.url));
   $durum.textContent = sonuc.length
     ? `${sonuc.length} kaynak gösteriliyor`
     : "Aramanla eşleşen kaynak yok.";

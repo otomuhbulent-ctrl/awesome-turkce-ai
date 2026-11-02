@@ -73,7 +73,7 @@ Bu repoda hazırlanan adım adım Türkçe rehberler:
 ## Değerlendirme ve Benchmark
 
 - [Mukayese](https://github.com/alisafaya/mukayese) - Türkçe NLP görevleri için kapsamlı benchmark ve karşılaştırma çalışması.
-- [TurkishMMLU](https://github.com/ArdaYueksel/TurkishMMLU) - Türkçe dil modellerinin bilgi ve muhakeme yeteneğini ölçen çoktan seçmeli soru seti.
+- [TurkishMMLU](https://github.com/ArdaYueksel/TurkishMMLU) - Türkçe dil modellerinin bilgi ve muhakeme yeteneğini ölçen çoktan seçmeli soru seti. Veri setine erişim için depodaki yönergeye göre araştırmacılarla iletişime geçmek gerekir.
 
 ## Katkıda Bulun
 

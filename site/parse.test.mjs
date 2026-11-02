@@ -60,8 +60,22 @@ test("filtre: Türkçe arama, çok kelime ve bölüm", () => {
   assert.deepEqual(filtrele(k, "evren", "Veri Setleri"), []);
 });
 
+const README = readFileSync(new URL("../README.md", import.meta.url), "utf8");
+
 test("gerçek README en az bir kaynak üretir ve her kaynak dolu", () => {
-  const k = readmeParse(readFileSync(new URL("../README.md", import.meta.url), "utf8"));
+  const k = readmeParse(README);
   assert.ok(k.length >= 20, `beklenenden az kaynak: ${k.length}`);
   for (const x of k) assert.ok(x.bolum && x.ad && x.url && x.aciklama, JSON.stringify(x));
+});
+
+test("README'deki her kaynak satırı sitede görünür (kayıp yok)", () => {
+  // İçerik bölümlerindeki "- [" ile başlayan satırlar; İçindekiler ve Lisans hariç
+  const beklenen = [];
+  let bolum = null;
+  for (const satir of README.split(/\r?\n/)) {
+    const b = /^##\s+(.+?)\s*$/.exec(satir);
+    if (b) bolum = ["İçindekiler", "Katkıda Bulun", "Lisans"].includes(b[1]) ? null : b[1];
+    else if (bolum && /^\s*-\s+\[/.test(satir)) beklenen.push(/\[([^\]]+)\]/.exec(satir)[1]);
+  }
+  assert.deepEqual(readmeParse(README).map((x) => x.ad), beklenen);
 });
