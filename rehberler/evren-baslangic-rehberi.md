@@ -47,8 +47,9 @@ Farklı modelleri karşılaştırmak için aynı soruyu birkaç modele sor. Hang
 ## Adım 3: API anahtarı oluştur
 
 1. Sol menüden **LLM Çıkarım → API Anahtarları**'na git.
-2. Yeni bir anahtar oluştur ve hemen bir yere kaydet. Anahtar `evren_` ile başlar.
-3. **Modeller ve API** sayfasından API'nin **taban adresini (base URL)** kopyala; bir sonraki adımda lazım olacak.
+2. Yeni bir anahtar oluştur ve hemen bir yere kaydet. LLM anahtarları `evren_llm_` ile başlar.
+
+LLM API'sinin taban adresi (base URL): **`https://evren-llmapi.ssyz.org.tr/v1`**
 
 > ⚠️ API anahtarını kimseyle paylaşma ve GitHub'a yükleme. Aşağıdaki örnekte olduğu gibi ortam değişkeninde sakla.
 
@@ -60,16 +61,14 @@ EVREN, OpenAI SDK ile uyumlu olduğu için standart `openai` kütüphanesini kul
 pip install openai
 ```
 
-Anahtarını ve taban adresini ortam değişkeni olarak tanımla:
+Anahtarını ortam değişkeni olarak tanımla:
 
 ```bash
 # macOS / Linux
-export EVREN_API_KEY="evren_..."
-export EVREN_BASE_URL="<Modeller ve API sayfasındaki adres>"
+export EVREN_LLM_API_KEY="evren_llm_..."
 
 # Windows (PowerShell)
-$env:EVREN_API_KEY = "evren_..."
-$env:EVREN_BASE_URL = "<Modeller ve API sayfasındaki adres>"
+$env:EVREN_LLM_API_KEY = "evren_llm_..."
 ```
 
 Ve ilk isteğin:
@@ -79,8 +78,8 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.environ["EVREN_API_KEY"],
-    base_url=os.environ["EVREN_BASE_URL"],
+    api_key=os.environ["EVREN_LLM_API_KEY"],
+    base_url="https://evren-llmapi.ssyz.org.tr/v1",
 )
 
 response = client.chat.completions.create(
@@ -103,6 +102,21 @@ stream = client.chat.completions.create(
 for chunk in stream:
     if chunk.choices and chunk.choices[0].delta.content:
         print(chunk.choices[0].delta.content, end="", flush=True)
+```
+
+### Alternatif: resmî EVREN SDK'sı
+
+EVREN'in resmî Python SDK'sı [evren-sdk](https://github.com/speker/evren-sdk), embedding, rerank, OCR ve ses gibi uçlar için hazır yöntemler sunar. Anahtarı aynı `EVREN_LLM_API_KEY` ortam değişkeninden okur:
+
+```bash
+pip install evren-sdk
+```
+
+```python
+from evren_sdk import EvrenLLMClient
+
+with EvrenLLMClient() as llm:
+    print(llm.list_models())
 ```
 
 ## Türkçe için öne çıkan modeller
