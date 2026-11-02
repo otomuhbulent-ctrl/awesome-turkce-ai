@@ -165,6 +165,16 @@ EVREN'in [LLM Çıkarımı sayfasındaki](https://evren.ssyz.org.tr/llm-inferenc
 
 Kalan kotanı her yanıtın `x-ratelimit-*` başlıklarında görebilirsin.
 
+## Sorun giderme
+
+| Belirti | Sebep | Çözüm |
+|---|---|---|
+| `401` | Anahtar yok ya da geçersiz | `EVREN_LLM_API_KEY` değişkeninin tanımlı olduğunu kontrol et. Windows'ta değişkeni kaydettikten sonra **yeni bir terminal** aç; açık terminaller eski ortamı görür. Anahtarın `evren_llm_` ile başladığından ve sınıfının `LLM Çıkarım` olduğundan emin ol. |
+| `403` + `terms_not_accepted` | Kullanım şartları kabul edilmemiş | [Adım 4](#adım-4-kullanım-şartlarını-oku-ve-kabul-et)'ü uygula. |
+| `429` | Hız sınırı ya da günlük kota | Yanıttaki `x-ratelimit-*` başlıklarından kalan kotayı kontrol et. Günlük kota her gün 03:00'te (TSİ) yenilenir. Anahtara günlük token tavanı koyduysan o tavana da takılıyor olabilirsin. |
+| Bağlantı aniden kopuyor (Windows'ta `WinError 10054`) | Geçit tarafında geçici kesinti; özellikle uzun OCR işlerinde görülebilir | Birkaç saniye sonra yeniden dene. Çok sayfalı işlerde sonuçları sayfa sayfa kaydet ki kopma tüm işi baştan başlatmasın ([örnek](https://github.com/otomuhbulent-ctrl/evren-cookbook/tree/main/examples/01-pdf-soru-cevap)). |
+| Uzun belgeyle `429`, kısa belgede sorun yok | Dakikalık token hacmi (TPM) aşıldı | İstekleri küçük parçalara böl ya da aralarına bekleme koy. |
+
 ## Kredi kazanmak
 
 EVREN'de GPU kullanımı kredi (CR) ile yapılıyor. Kredi kazanmanın yolu platforma katkı vermek: veri yüklemek, etiketlemek, model paylaşmak. Örneğin ilk 100 veriyi yüklediğinde +2 CR, 1.000 veride +15 CR kazanırsın. Tüm kazanım yolları için menüdeki **Kredi Merkezi**'ne bakabilirsin.
